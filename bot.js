@@ -31,6 +31,7 @@ client.user.setGame(`The Woken`,"http://twitch.tv/S-F")
 
 
 
+
   client.on('message', message => {
 	
 if(!message.channel.guild) return;
@@ -276,7 +277,7 @@ client.on('message', msg => {
 client.on("ready", () => {
     var guild;
     while (!guild)
-        guild = client.guilds.get("498250817695121418");
+        guild = client.guilds.get("497527465787392016");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -288,7 +289,7 @@ client.on("ready", () => {
 
 
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("497527465787392016");
+    let channel = member.guild.channels.get("497527466223468550");
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
@@ -299,7 +300,7 @@ client.on("guildMemberAdd", (member) => {
     console.log('-');
     var guild;
     while (!guild)
-        guild = client.guilds.get("497527466223468550");
+        guild = client.guilds.get("497527465787392016");
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -391,7 +392,7 @@ client.on("ready", () => {
     })
 })
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find('name', 'chat-💬');
+    let channel = member.guild.channels.find('name', 'The Woken');
     if (!channel) {
         console.log("!channel fails");
         return;
