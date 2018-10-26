@@ -90,7 +90,6 @@ client.on("ready", () => {
     });
 });
 
-//////////////////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", (member) => {
     let channel = member.guild.channels.get("505526727108198411");
