@@ -17,9 +17,14 @@ client.on('guildMemberAdd', member => {
         .setAuthor(m.username,m.avatarURL)
         .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
       
-         .setFooter(`${m.tag}`,"https://media.discordapp.net/attachments/496695414377021440/505478233035243530/welcome_sg.png")
+         .setFooter(`${m.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
      welcomer.send({embed:yumz});          
-         const w = ['./img/w1.png'];
+         
+    
+
+
+
+const w = ['./DISIGNER/welcome_sg.png'];
 
          let Image = Canvas.Image,
             canvas = new Canvas(400, 200),
@@ -43,7 +48,7 @@ client.on('guildMemberAdd', member => {
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#f1f1f1";
                         ctx.textAlign = "center";
-                        ctx.fillText(`welcome to FUN SERVER ${member.guild.name}`, 300, 130);
+                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
                         
                         ctx.font = "bold 12px Arial";
                         ctx.fontSize = '20px';
