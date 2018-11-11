@@ -56,7 +56,7 @@ msg.delete();
 });
 
   client.on('message', message => {
-    if (message.content.startsWith("Link")) {
+    if (message.content.startsWith("!link")) {
 
   message.channel.createInvite({
         thing: true,
@@ -76,7 +76,7 @@ message.author.send(`**مدة الرابط : يـوم
 
 
 client.on('message', function(message) {
-    if (message.content == "clear") {
+    if (message.content == "!clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -88,7 +88,7 @@ client.on('message', function(message) {
 });
 
   client.on('message', message => {
-      if(message.content.startsWith ("marry")) {
+      if(message.content.startsWith ("!marry")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
       var proposed = message.mentions.members.first()
      
@@ -117,7 +117,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 });
 
 client.on('message',  (message) => {
-        if(message.content.startsWith('kf')) {
+        if(message.content.startsWith('!kf')) {
   let user = message.mentions.users.first();
   if (!user) {
 
@@ -148,7 +148,7 @@ client.on('message',  (message) => {
 
 client.on('message', message => {
 
-    if (message.content === "mc") {
+    if (message.content === "!mc") {
                         if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' ليس لديك صلاحيات');
@@ -159,7 +159,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' لي
                message.reply("تم تقفيل الشات ? ")
            });
              }
-if (message.content === "umc") {
+if (message.content === "!umc") {
     if(!message.channel.guild) return message.reply(' هذا الامر فقط للسيرفرات !!');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('ليس لديك صلاحيات');
@@ -177,7 +177,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('لي�
 
 
 client.on('message', message => {
-    if (message.content.startsWith("hacked")) {
+    if (message.content.startsWith("!hacked")) {
       if (message.author.bot) return
            message.delete();
              let args = message.content.split(' ').slice(1);
@@ -364,7 +364,7 @@ client.on('message',async message => {
   
   
 client.on('message', message => {
-    var prefix = "$";
+    var prefix = "!";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -663,9 +663,9 @@ client.on("message", (message) => {
   if (message.content.startsWith("!close")) {
         if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $confirm`)
+       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب !confirm`)
            .then((m) => {
-               message.channel.awaitMessages(response => response.content === '$confirm', {
+               message.channel.awaitMessages(response => response.content === '!confirm', {
                        max: 1,
                        time: 10000,
                        errors: ['time'],
@@ -714,21 +714,15 @@ client.user.setGame(`!help |!invite `,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  //////////////////////////////////////////////////////
- client.on(`message`, message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes( `discord.gg`)){
-    message.delete()
-    return message.reply(` **يمنع نشر روابط الديسكورد **`)
-}
-});
+ 
 /////////////////////////////////////////////////////////
 client.on('message', message => {
     if(message.content === "!bot") {
         const embed = new Discord.RichEmbed()
         .setColor("#00FFFF")
-        .setDescription(`**Servers**ًںŒگ **__${client.guilds.size}__**
-**Users**ًں‘¥ **__${client.users.size}__**
-**Channels**ًں“ڑ **__${client.channels.size}__** `)
+        .setDescription(`**Servers* **__${client.guilds.size}__**
+**Users* **__${client.users.size}__**
+**Channels* **__${client.channels.size}__** `)
                message.channel.sendEmbed(embed);
            }
 });
@@ -799,7 +793,7 @@ m.sendMessage(args)
 client.on('message', message => {
   if (true) {
 if (message.content === '!support') {
-      message.author.send(' https://discord.gg/hv2NaYn دخول سيرفر الدعم لـ أي استفسار').catch(e => console.log(e.stack));
+      message.author.send(' https://discord.gg/HNkzuP2 دخول سيرفر الدعم لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
    } 
@@ -815,17 +809,83 @@ if (message.content === '!invite') {
    } 
   });
   ////////////////////////////////////
-  client.on('guildMemberAdd', member => {
-    var embed = new Discord.RichEmbed()
-    .setThumbnail(member.user.avatarURL)
-  .addField("***شكرا الانضمامك الينا***" ,member.user.username )
-    .setDescription('***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا***')
-    .setColor('RANDOM')
-    .setImage('http://www.imgion.com/images/01/Welcome-buddy.jpg')
-var channel =member.guild.channels.find('name', 'welcome')
-if (!channel) return;
-channel.send({embed : embed});
+ client.on('guildMemberAdd', member => {
+     const welcomer =  member.guild.channels.find('name', 'welcome');
+    if(!welcomer) return;
+      if(welcomer) {
+         moment.locale('ar-ly');
+         var m = member.user;
+        let yumz = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(m.avatarURL)
+        .setAuthor(m.username,m.avatarURL)
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+      
+         .setFooter(`${m.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+     welcomer.send({embed:yumz});          
+         
+    
+
+
+
+const w = ['./img/w1.png'];
+
+         let Image = Canvas.Image,
+            canvas = new Canvas(400, 200),
+            ctx = canvas.getContext('2d');
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 400, 200);
+             
+          
+
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(100) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        
+                        ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(`welcome to ${member.guild.name}`, 300, 130);
+                        
+                        ctx.font = "bold 12px Arial";
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#f1f1f1";
+                        ctx.textAlign = "center";
+                        ctx.fillText(member.user.username, 200, 150);
+ 
+                let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(77, 101, 62, 0, Math.PI*2);
+                              ctx.stroke();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 13, 38, 128, 126);  
+                          
+                
+                             
+welcomer.sendFile(canvas.toBuffer())
+
+
+
+      
+      
+                    }  )  
+      
+                    
+
+})
+      });                    
+ }
 });
+///////////////////////////////////////////
 client.on('message' , message => {
 if(message.content === '!help') {
   var EsTeKnAN = new Discord.RichEmbed()
