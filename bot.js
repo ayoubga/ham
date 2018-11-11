@@ -933,7 +933,7 @@ client.on('message', message => {
                  }
         }
  
-        fs.writeFile('./setWlc.json', JSON.stringify(sw), (err) => {
+      
 if (err) console.error(err);
 })
 })
