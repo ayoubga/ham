@@ -716,7 +716,7 @@ client.user.setStatus("dnd")
  //////////////////////////////////////////////////////
  client.on(`message`, message => {
     var args = message.content.split(/[ ]+/)
-    if(message.content.includes( `discord`)){
+    if(message.content.includes( `discord.gg`)){
     message.delete()
     return message.reply(` **يمنع نشر روابط الديسكورد **`)
 }
