@@ -1019,5 +1019,16 @@ client.on("guildMemberAdd", member => {
       });
       });
 ////////////////////////////////////////////////
+///bc all
+client.on('message', message => {
+const args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('!bcall')){
+ if(!message.author.id === '399353508429824000') return;
+message.channel.sendMessage(':white_check_mark: Sending The BC')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
