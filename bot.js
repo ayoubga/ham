@@ -1000,7 +1000,7 @@ client.on('message', message => {
   var sender = message.author
 
 if(!message.guild) return
-  if(!sw[message.guild.id]) sw[message.guild.id] = {
+  
   onoff: 'Off',
   ch: 'Welcome',
   msk: 'Welcome'
