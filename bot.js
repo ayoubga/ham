@@ -710,7 +710,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : Randy ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`!help | `,"http://twitch.tv/DJ")
+client.user.setGame(`!help |!invite `,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  //////////////////////////////////////////////////////
@@ -827,7 +827,7 @@ if (!channel) return;
 channel.send({embed : embed});
 });
 client.on('message' , message => {
-if(message.content === 'help') {
+if(message.content === '!help') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 message.author.send(`
