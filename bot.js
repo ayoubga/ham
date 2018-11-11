@@ -995,7 +995,7 @@ client.on("guildMemberAdd", member => {
                         ctx.fontSize = '20px';
                         ctx.fillStyle = "#FFFFFF";
                         ctx.textAlign = "center";
-                        ctx.fillText(`انت العضو رقم  ${member.guild.memberCount} ! `, 340 , 98);
+                        ctx.fillText(`Number  ${member.guild.memberCount} ! `, 340 , 98);
     
                                                       //name
                               ctx.font = '20px Arial Bold';
