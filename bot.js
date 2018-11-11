@@ -898,7 +898,6 @@ message.author.send(`
 }
 })
  
-client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
 client.on('guildMemberAdd', member => {
      const welcomer =  member.guild.channels.find('name', 'welcome');
     if(!welcomer) return;
@@ -977,3 +976,4 @@ welcomer.sendFile(canvas.toBuffer())
 });
     
 
+client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
