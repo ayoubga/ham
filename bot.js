@@ -1032,7 +1032,6 @@ m.sendMessage(args)
 });
 //////////////////////////
 client.on('guildMemberAdd', member => {
-	const prefix = "."
   let ch = member.guild.channels.find("name" , sw[member.guild.id].ch);
   let msk = sw[member.guild.id].msk;
 
@@ -1068,7 +1067,7 @@ client.on('guildMemberAdd', member => {
   
   })
   
-                  let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                  let url = member.user.displayAvatarURL.endsWith("!webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
                   jimp.read(url, (err, ava) => {
                       if (err) return console.log(err);
                       ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
@@ -1115,7 +1114,7 @@ client.on('message', message => {
   var sender = message.author
 
 if(!message.guild) return
-client(!sw[message.guild.id]) sw[message.guild.id] = {
+  if(!sw[message.guild.id]) sw[message.guild.id] = {
   onoff: 'Off',
   ch: 'Welcome',
   msk: 'Welcome'
@@ -1172,7 +1171,7 @@ Message : __${sw[message.guild.id].msk}__`)
 
   
 
-    fs.writeFile("./setwlc.json", JSON.stringify(sw), (err) => {
+    fs.writeFile("!/setwlc.json", JSON.stringify(sw), (err) => {
     if (err) console.error(err)
   });
 
@@ -1196,7 +1195,6 @@ client.on('ready', () => {
   console.log(`✨ Channels: ${client.channels.size}`)
   console.log('-------------------------')
 })
-
 
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
