@@ -247,36 +247,6 @@ gg.send({embed : new Discord.RichEmbed()
  }
 })
 
-client.on('message', message =>{
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let prefix = '!';
-     
-    if(cmd === `${prefix}report`){
-        let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!rUser) return message.channel.send("Idk who 2 report ??");
-        let reason = args.join(" ").slice(22);
-        if(!reason) return message.channel.send("What is the reason ??");
-    
-        let reportEmbed = new Discord.RichEmbed()
-        .setTitle("User just reported...")
-        .setColor("#f7abab")
-        .addField("- Reported User :", `${rUser} (${rUser.id})`)
-        .addField("- Reported By :", `${message.author} (${message.author.id})`)
-        .addField("- Reported In :", message.channel)
-        .addField("- Report Time :", message.createdAt.toLocaleString(),true)
-        .addField("- Reason :", reason);
-    
-        let reportschannel = message.guild.channels.find(`name`, "reports");
-        if(!reportschannel) return message.channel.send("You should to make `reports` channel.");
-    
-    
-        message.delete().catch(O_o=>{});
-        message.author.send(`<@${rUser.id}>, Reported Successfully!!`)
-        reportschannel.send(reportEmbed);
-    };
-});
 
 
 client.on('message', message =>{
@@ -540,7 +510,7 @@ client.on("message", message => {
     if( !message.guild ) return;
     if( !msg.startsWith( prefix + '!role' ) ) return;
     if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
-    if( msg.toLowerCase().startsWith( prefix + 'rerole' ) ){
+    if( msg.toLowerCase().startsWith( prefix + '!rerole' ) ){
         if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد سحب منه الرتبة**' );
         if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );
         var role = msg.split(' ').slice(2).join(" ").toLowerCase();
@@ -549,7 +519,7 @@ client.on("message", message => {
             message.mentions.members.first().removeRole( role1 );
             return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم سحب من **');
         }
-        if( args[0].toLowerCase() == "all" ){
+        if( args[0].toLowerCase() == "!all" ){
             message.guild.members.forEach(m=>m.removeRole( role1 ))
             return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من الكل رتبة**');
         } else if( args[0].toLowerCase() == "bots" ){
