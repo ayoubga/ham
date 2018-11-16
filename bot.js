@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const devs = ['389090790984515594','350408440566382592'];
+const devs = ['399353508429824000','399353508429824000'];
 var prefix = "!";
 const adminprefix = "!"
 const db = require('quick.db');
@@ -424,7 +424,7 @@ client.on('message' , message => {
   
 client.on('message', message => {
       if (!devs.includes(message.author.id)) return;
-  if (message.content.startsWith(adminprefix + 'sliver')) {
+  if (message.content.startsWith(adminprefix + 'vip')) {
     if (!devs.includes(message.author.id)) return; 
 let args = message.content.split(' ').slice(1).join(' ');
 
@@ -437,7 +437,7 @@ m.sendMessage(args)
 client.on('ebnklb',function(ebnklb) {
     
     if(ebnklb.content.startsWith(`<@${client.user.id}>`)) {
-        ebnklb.channel.send('Hey Im **Sliver bot !**  A Nice Bot Developed By:`MHSTR`')
+        ebnklb.channel.send('Hey Im **vip bot !**  A Nice Bot Developed By:`Randy`')
         ebnklb.channel.send('My Prefix `!`')
 
     }
@@ -700,7 +700,7 @@ client.on('message', async msg => {
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("sliver Bot")
+					.setFooter("vip Bot")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 					
 					try {
@@ -885,92 +885,7 @@ const codes = {
   });
   
   
-  client.on('message' , async message => {
-	  var prefix = "!";
-         if(message.content.startsWith(prefix + "emoji")) {
-            let args = message.content.split(" ").slice(1);
-    if (args.length < 1) {
-      message.channel.send('You must provide some text to emojify!');
-  }
-  
-  message.channel.send(
-      args.join(' ')
-          .split('')
-          .map(c => codes[c] || c)
-          .join('')
-  );
-  };
-  });
-
-var Za7f = [
-  "**صورة وجهك او رجلك او خشمك او يدك**.",
-  "**اصدر اي صوت يطلبه منك الاعبين**.",
-  "**سكر خشمك و قول كلمة من اختيار الاعبين الي معك**.",
-  "**روح الى اي قروب عندك في الواتس اب و اكتب اي شيء يطلبه منك الاعبين  الحد الاقصى 3 رسائل**.",
-  "**قول نكتة اذا و لازم احد الاعبين يضحك اذا محد ضحك يعطونك ميوت الى ان يجي دورك مرة ثانية**.",
-  "**سمعنا صوتك و غن اي اغنية من اختيار الاعبين الي معك**.",
-  "**ذي المرة لك لا تعيدها**.",
-  "**ارمي جوالك على الارض بقوة و اذا انكسر صور الجوال و ارسله في الشات العام**.",
-  "**صور اي شيء يطلبه منك الاعبين**.",
-  "**اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....**.",
-  "**سكر خشمك و قول كلمة من اختيار الاعبين الي معك**.",
-  "**سو مشهد تمثيلي عن مصرية بتولد**.",
-  "**اعطي اي احد جنبك كف اذا مافيه احد جنبك اعطي نفسك و نبي نسمع صوت الكف**.",
-  "**ذي المرة لك لا تعيدها**.",
-  "**تعطي اي شخص 5 الاف كرديت**.",
-  "**ارمي جوالك على الارض بقوة و اذا انكسر صور الجوال و ارسله في الشات العام**.",
-  "**روح عند اي احد بالخاص و قول له انك تحبه و الخ**.",
-  "**اكتب في الشات اي شيء يطلبه منك الاعبين في الخاص**.",
-  "**قول نكتة اذا و لازم احد الاعبين يضحك اذا محد ضحك يعطونك ميوت الى ان يجي دورك مرة ثانية**.",
-  "**سامحتك خلاص مافيه عقاب لك :slight_smile:**.",
-  "**اتصل على احد من اخوياك  خوياتك , و اطلب منهم مبلغ على اساس انك صدمت بسيارتك**.",
-  "**غير اسمك الى اسم من اختيار الاعبين الي معك**.",
-  "**اتصل على امك و قول لها انك تحبها :heart:**.",
-  "**لا يوجد سؤال لك سامحتك :slight_smile:**.",
-  "**قل لواحد ماتعرفه عطني كف**.",
-  "**منشن الجميع وقل انا اكرهكم**.",
-  "**اتصل لاخوك و قول له انك سويت حادث و الخ....**.",
-  "**روح المطبخ و اكسر صحن او كوب**.",
-  "**اعطي اي احد جنبك كف اذا مافيه احد جنبك اعطي نفسك و نبي نسمع صوت الكف**.",
-  "**قول لاي بنت موجود في الروم كلمة حلوه**.",
-  "**تكلم باللغة الانجليزية الين يجي دورك مرة ثانية لازم تتكلم اذا ما تكلمت تنفذ عقاب ثاني**.",
-  "**لا تتكلم ولا كلمة الين يجي دورك مرة ثانية و اذا تكلمت يجيك باند لمدة يوم كامل من الس��رفر**.",
-  "**قول قصيدة **.",
-  "**تكلم باللهجة السودانية الين يجي دورك مرة ثانية**.",
-  "**اتصل على احد من اخوياك  خوياتك , و اطلب منهم مبلغ على اساس انك صدمت بسيارتك**.",
-  "**اول واحد تشوفه عطه كف**.",
-  "**سو مشهد تمثيلي عن اي شيء يطلبه منك الاعبين**.",
-  "**سامحتك خلاص مافيه عقاب لك :slight_smile:**.",
-  "**اتصل على ابوك و قول له انك رحت مع بنت و احين هي حامل....**.",
-  "**روح اكل ملح + ليمون اذا مافيه اكل اي شيء من اختيار الي معك**.",
-  "**تاخذ عقابين**.",
-  "**قول اسم امك افتخر بأسم امك**.",
-  "**ارمي اي شيء قدامك على اي احد موجود او على نفسك**.",
-  "**اذا انت ولد اكسر اغلى او احسن عطور عندك اذا انتي بنت اكسري الروج حقك او الميك اب حقك**.",
-  "**اذهب الى واحد ماتعرفه وقل له انا كيوت وابي بوسه**.",
-  "**تتصل على الوالده  و تقول لها خطفت شخص**.",
-  "** تتصل على الوالده  و تقول لها تزوجت با سر**.",
-  "**����تصل على الوالده  و تقول لها  احب وحده**.",
-    "**تتصل على شرطي تقول له عندكم مطافي**.",
-    "**خلاص سامحتك**.",
-    "** تصيح في الشارع انا  مجنوون**.",
-    "** تروح عند شخص تقول له احبك**.",
-
-];
-
-client.on('message', message => {
- if (message.content.startsWith("!عقاب")) {
-              if(!message.channel.guild) return message.reply('** This command only for servers**');
-var embed = new Discord.RichEmbed()
-.setColor('RANDOM')
- .setThumbnail(message.author.avatarURL) 
-.addField('sliver BOT' ,
-`${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
-message.channel.sendEmbed(embed);
-console.log('[38ab] Send By: ' + message.author.username)
-  }
-});
-
+ 
 client.on('message', ra3d => {
 var prefix = "!";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
@@ -988,72 +903,7 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
             }
        });
 
-client.on('message', message => {
-var prefix = "!";
-var cats = ["http://www.shuuf.com/shof/uploads/2015/09/09/jpg/shof_b9d73150f90a594.jpg","https://haltaalam.info/wp-content/uploads/2015/05/0.208.png","https://haltaalam.info/wp-content/uploads/2015/05/266.png","https://haltaalam.info/wp-content/uploads/2015/05/250.png","https://haltaalam.info/wp-content/uploads/2017/02/0.2517.png","https://pbs.twimg.com/media/CP0mi02UAAA3U2z.png","http://www.shuuf.com/shof/uploads/2015/08/31/jpg/shof_3b74fa7295ec445.jpg","http://www.shuuf.com/shof/uploads/2015/08/22/jpg/shof_fa3be6ab68fb415.jpg","https://pbs.twimg.com/media/CSWPvmRUcAAeZbt.png","https://pbs.twimg.com/media/B18VworIcAIMGsE.png"]
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'هل تعلم')) {
-         var cat = new Discord.RichEmbed()
-.setImage(cats[Math.floor(Math.random() * cats.length)])
-message.channel.sendEmbed(cat);
-    }
-});
 
-const zead = [
-   '*** انا اسمي مريم ***',
-   '*** مرحباَ ماهو اسمك ؟ ***',
-   `*** اهلا بك ! انا تائهه في هذا المكان  ***`,
-   '*** هل تود مساعدتي ؟ ***',
-   '*** لماذا هل انت قاسي القلب ؟ ***',
-   '*** انني اشفق عليك يجب ان تطهر روحك وتحب الخير للجميع ***',
-   '*** ابتعد عني قليل انني متعبة ***',
-	 '*** هل انت نادم على ماقلت ؟ ***',
-   '*** هل تود مساعدتي ؟ ***',
-   '*** واو اشكرك انك شخصاَ رائع ! ***',
-   '*** ابحث معي عن منزلي لقد كان قريباَ من هنا ***',
-   '*** ولاكن عندما حل الليل لم اعد ارى اي شيء ***',
-   '*** مذا تظن اين يوجد ؟ يمين او يسار ***',
-   '*** هيا اذاَ ***',
-   '*** اود ان اسئلك سؤال ونحن في الطريق ***',
-   '*** هل تراني فتاة لطيفة ام مخيفة ***',
-   '*** اشكرك !  ***',
-   '*** لقد وصلنا الى المنزل شكراَ جزيلَ انتطرني ثواني وسوف اعود ***',
-   '*** هل انت جاهز ؟ ***',
-   '*** لقد اخبرت والدي عنك وهم متحمسين لرؤيتك ***',
-   '*** هل تود ان تراهم الان ***',
-'*** انا لست الحوت الازرق كما يدعون ***',
-   '*** انا لست كاذبة صدقني***',
-   '*** لماذا ارى في عينيك الخوف ؟ ***',
-   '*** انا مجرد فتاة لطيفة تحب اللعب مع الجميع ***',
-   '*** اعرف كل شيء يحدث اسمع ذالك بالراديو ***',
-   '*** سمعت ان البشر يقتلون من اجل المال فقط ***',
-   '*** لماذا لم تدخل الغرفة ؟ ***',
-   '*** ههههههههههههههههههه انت الان مسجون في هذه الغرفة ***',
-   '*** لن تخرج حتى اعود لك بعد قليل ***',
-   '*** المفتاح معك ! اكتب .مريم  ***',
-   '*** مفتاح احمر , هل حصلت عليه ؟ ***',
-   '*** ان لم تحصل عليه , اكتب .مريم مرة اخرى ***',
-   '*** مفتاح اسود . هل حصلت عليه ؟ ***',
-   '*** اين تريد ان تختبئ بسرعة قبل ان تعود ***',
-   '*** لقد عادت من جديد الى المنزل ***',
-   '*** لا تصدر اي صوت ! ***',
-   '*** مريم : لقد عدت ***',
-   '*** مريم : يا ايها المخادع اين انت ***',
-   '*** مريم : اعلم انك هنا في المنزل ***',
-   '*** مريم : ماذا تريد ان تسمع ***',
-   '*** احد ما خرج من المنزل ***',
-   '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
-];
- client.on('message', message => {
- if (message.content.startsWith('!مريم')) {
-  var mariam= new Discord.RichEmbed()
-  .setTitle("لعبة مريم ..")
-  .setColor('RANDOM')
-  .setDescription(`${zead[Math.floor(Math.random() * zead.length)]}`)
-  .setImage("https://www.npa-ar.com/wp-content/uploads/2017/08/%D9%84%D8%B9%D8%A8%D8%A9-%D9%85%D8%B1%D9%8A%D9%85-300x200.jpg")
-   message.channel.sendEmbed(mariam);
-  }
-});
 
 const Langs = ['afrikaans', 'albanian', 'amharic', 'arabic', 'armenian', 'azerbaijani', 'bangla', 'basque', 'belarusian', 'bengali', 'bosnian', 'bulgarian', 'burmese', 'catalan', 'cebuano', 'chichewa', 'chinese simplified', 'chinese traditional', 'corsican', 'croatian', 'czech', 'danish', 'dutch', 'english', 'esperanto', 'estonian', 'filipino', 'finnish', 'french', 'frisian', 'galician', 'georgian', 'german', 'greek', 'gujarati', 'haitian creole', 'hausa', 'hawaiian', 'hebrew', 'hindi', 'hmong', 'hungarian', 'icelandic', 'igbo', 'indonesian', 'irish', 'italian', 'japanese', 'javanese', 'kannada', 'kazakh', 'khmer', 'korean', 'kurdish (kurmanji)', 'kyrgyz', 'lao', 'latin', 'latvian', 'lithuanian', 'luxembourgish', 'macedonian', 'malagasy', 'malay', 'malayalam', 'maltese', 'maori', 'marathi', 'mongolian', 'myanmar (burmese)', 'nepali', 'norwegian', 'nyanja', 'pashto', 'persian', 'polish', 'portugese', 'punjabi', 'romanian', 'russian', 'samoan', 'scottish gaelic', 'serbian', 'sesotho', 'shona', 'sindhi', 'sinhala', 'slovak', 'slovenian', 'somali', 'spanish', 'sundanese', 'swahili', 'swedish', 'tajik', 'tamil', 'telugu', 'thai', 'turkish', 'ukrainian', 'urdu', 'uzbek', 'vietnamese', 'welsh', 'xhosa', 'yiddish', 'yoruba', 'zulu'];
 
@@ -1232,12 +1082,12 @@ var v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("#6a109d")
   v1.setDescription('***__ انتظر .. جاري الحصول علي البيانات __***')
-  v1.setFooter("# | Sliver TeaM |")
+  v1.setFooter("# | vip TeaM |")
 var heroo = new Discord.RichEmbed()
 .setColor('#6a109d')
 .setTimestamp(new Date())
 .setThumbnail(client.user.avatarURL)
-.setTitle('SLiver Bot Info')
+.setTitle('vip Bot Info')
 .setURL('https://discordapp.com/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot')
 .setAuthor(client.user.username,client.user.avatarURL)
 .addField("**البرفكس** :",`**[ ${prefix} ]**`,true)
@@ -1248,7 +1098,7 @@ var heroo = new Discord.RichEmbed()
 .addField("**ايدي البوت **:","**[ "+client.user.id+" ]**",true)
 .addField("**الحجم المستخدم** :",`**[ ${(process.memoryUsage().rss / 1048576).toFixed()}MB ]**`,true)
 .addField("**موعد الاقلاع** :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
-.setFooter("Sliver team  |");
+.setFooter("vip team  |");
   message.channel.send({embed:v1}).then(m => {
       setTimeout(() => {
          m.edit({embed:heroo});
@@ -1256,18 +1106,7 @@ var heroo = new Discord.RichEmbed()
   });
 }
 });
-client.on("message", message => {
-    var prefix = "!"
-    if (!message.content.startsWith(prefix)) return;
-      let command = message.content.split(" ")[0];
-      command = command.slice(prefix.length);
-        if(command === "skin") {
-                const args = message.content.split(" ").slice(1).join(" ")
-        if (!args) return message.channel.send("** Type your skin name **");
-        const image = new Discord.Attachment(`https://visage.surgeplay.com/full/256/${args}`, "skin.png");
-    message.channel.send(image)
-        }
-    });
+
 
 
 client.on('message', message => {
@@ -2875,7 +2714,7 @@ client.on("message", (message) => {
 });  
 
 const sWlc = {}
-const premium = ['389090790984515594']
+const premium = ['399353508429824000']
 client.on('message', message => {
 var prefix = "!";
 if(message.channel.type === "dm") return;
