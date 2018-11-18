@@ -96,7 +96,7 @@ const prefix = "!";
 });
 client.on('message', async message => { //////////// امر الميوت
   let args = message.content.split(" ");
-  if(message.content.startsWith(prefix + "mute")) {
+  if(message.content.startsWith(prefix + "!mute")) {
     if(!message.member.hasPermission("MUTE_MEMBERS")) return message.channel.send('').then(msg => {
       msg.delete(3500);
       message.delete(3500);
@@ -213,7 +213,7 @@ if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return mess
 });
 client.on('message', message => { ///////////// امر البرودكاست 
    if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'bc')) {
+if(message.content.startsWith(prefix + '!bc')) {
 if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
 if(!message.member.hasPermission('ADMINISTRATOR')) return
 const args = message.content.split(" ").slice(1).join(" ")
@@ -259,7 +259,7 @@ msg.delete();
 }
 });
 client.on('message', message => { //////////// رابط 
-    if (message.content.startsWith("link")) {
+    if (message.content.startsWith("!link")) {
 
   message.channel.createInvite({
         thing: true,
@@ -277,7 +277,7 @@ message.author.send(`**مدة الرابط : يـوم
     }
 });
 client.on('message', function(message) {//// مسح 
-    if (message.content == "clear") {
+    if (message.content == "!clear") {
         if (message.member.hasPermission("MANAGE_MESSAGES")) {
             message.channel.fetchMessages()
                .then(function(list){
@@ -327,7 +327,7 @@ if(message.author.bot) return;
     channel: "welcome"
 }
 const channel = sWlc[message.guild.id].channel
-  if (message.content.startsWith(prefix + "setwelcomer")) {
+  if (message.content.startsWith(prefix + "!setwelcomer")) {
     if(!message.member.hasPermission(`MANAGE_GUILD`)) return;
     let newChannel = message.content.split(' ').slice(1).join(" ")
     if(!newChannel) return message.reply(`**${prefix}setwelcomer <channel name>**`)
